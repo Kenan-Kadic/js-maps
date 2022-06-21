@@ -27,3 +27,61 @@ const restaurant = {
     },
   },
 };
+
+// WHAT ON EARTH IS A MAP EVEN?
+
+// it is a data structure that we can use to map objects to keys
+// in maps the keys can have any type--different from object where keys is only string
+// this is some advanced stuff - fancy keys
+
+const rest = new Map();
+rest.set('name', 'Classico Italiano')
+// you just added a new element to the data structure
+rest.set(1, 'Firenze Italy')
+// look at the key being a number
+// CALLING THE SET METHOD NOT ONLY SETS ITEM BUT IT RETURNS THE MAP
+console.log(rest.set(2, 'Lisbon, Portugal'))
+
+// since set also RETURNS the map--you can chain set methods to add more stuff at once
+
+rest.set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic']).set('open', 11).set('close', 23);
+
+// you can even use booleans to the key
+rest.set(true, 'We are open!');
+rest.set(false, 'We are closed!')
+
+// to get a value from a map use the GET method on the KEY
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(2));
+
+//something fun but not very readable
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+// HOW TO CHECK IF MAP CONTAINS KEY
+console.log(rest.has('categories'));
+
+// how to delete items
+rest.delete(2);
+console.log(rest)
+
+// the size property
+console.log(rest.size);
+
+// remove all elements from map
+// rest.clear(rest)
+
+// ARRAYS OR OBJECTS CAN BE KEYS OF MAPS
+
+rest.set ([1,2], 'Test')
+
+// these 2 arrays here are 2 different values in the heap - you have to use naming to get them the same
+console.log(rest.get([1,2]))
+
+const array = [1,2];
+// you can even do this advanced move
+rest.set(document.querySelector('h1'), 'Heading');
+rest.set(array, 'Test');
+console.log(rest.get(array));
+// Now it refers to same element in heap memory
