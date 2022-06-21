@@ -114,8 +114,8 @@ console.log(question.get('question'))
 for(const [key, value] of question) {
   if (typeof key === 'number') console.log(`Answer ${key}: ${value}`)
 }
-const answer = Number(prompt(`Your answer: `))
-console.log(answer);
+// const answer = Number(prompt(`Your answer: `))
+// console.log(answer);
 
 // console.log(question.get(question.get('correct') === answer ));
 
@@ -125,4 +125,58 @@ console.log(answer);
 console.log([...question])
 console.log([...question.keys()])
 console.log([...question.values()])
+
+// WHICH DATA STRUCTURE SHOULD YOU EVEN USE?
+
+// 3 SOURCES OF DATA
+
+// 1. it can come from the source code itself
+
+// 2. it can come from the UI - something user inputs or data written in DOM
+
+// 3. Data can come from a WEB API fetch
+
+// you will usually get COLLECTIONS of data
+
+// you have to store them as DATA STRUCTURE
+
+// if Simple List - you need an array or a set
+// if it is based on KEY and VALUE pairs - you need object or Maps
+// keys allow you  to describe the value so objects are nice
+
+// API webdata comes from JSON format
+// creating an array of objects is VERY COMMON
+
+
+// ------------------------------------------------------
+
+//ARRAYS are for a list of values that are simple and don't need to name and describe each value
+//ARRAYS are for values that need to be ordered
+//you can also manipulate data
+
+//SETS are for unique values
+//It removes duplicates
+//It provides high performance
+// 10 times faster than arrays at adding items and removing items
+// used to remove duplicate values from an array
+// these compliment arrays
+
+
+
+// OBJECTS vs MAPS
+
+// Objects is traditional
+// easy to write and access values with . and []
+// if you need functions as values use an object for that
+// you can use this keyword to access methods
+// JSON data is best for objects
+
+// MAPS are faster with better performance
+// KEYS can have any data type
+// easy to iterate
+// easy to compute size
+// use maps when you need to map keys to values
+// use maps when you need keys that are not strings
+// has no this keyword
+
 
